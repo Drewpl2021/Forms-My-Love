@@ -9,10 +9,20 @@
 
 <body>
     <div class="contenedor">
-        <div class="pregunta" style="text-align: center;">
-            <h1>❤️Tu puedes mi Amor❤️</h1>
+        <div class="pregunta" style="text-align: center; font-family: 'Segoe UI', sans-serif; padding: 20px;">
+            <h1 style="font-size: 2.5em; color: #e91e63;">❤️ ¡Tú puedes, mi Amor! ❤️</h1>
+            <p style="font-size: 1.2em; color: #444; max-width: 600px; margin: 0 auto;">
+                🌟 Mi vida hermosa, tú puedes con todo 💪💖. Eres fuerte, valiente y tan capaz 😍.
+                Confío en ti con todo mi corazón 💘.
+                Siempre estaré a tu lado para apoyarte 🤝, animarte 🎉 y darte mi amor infinito 💞.
+                ¡Vamos que tú eres increíble, mi reina! 👑✨
+                <br><br>
+                Con todo mi amor,
+                <strong>💌 Tu Flaco 😘</strong>
+            </p>
         </div>
-        
+
+
         <div class="pregunta">
             <h3>1. ¿Cuáles son las teorías del parto?</h3>
             <div class="opcion" onclick="evaluar(this, true)" data-correcta="true">Prostaglandinas, privación de la
@@ -378,6 +388,8 @@
         </div>
 
     </div>
+    <div id="burbujas-container"></div>
+
 
 
 
@@ -449,6 +461,39 @@
                 });
             }
         }
+
+
+        const contenedor = document.getElementById('burbujas-container');
+
+        function crearCorazon() {
+            const corazon = document.createElement('div');
+            corazon.classList.add('corazon');
+            corazon.style.left = `${Math.random() * 100}%`;
+            corazon.style.animationDuration = `${5 + Math.random() * 5}s`;
+
+            corazon.addEventListener('click', () => explotarCorazon(corazon));
+            corazon.addEventListener('touchstart', () => explotarCorazon(corazon));
+
+            document.getElementById('burbujas-container').appendChild(corazon);
+
+            setTimeout(() => corazon.remove(), 11000);
+        }
+
+        function explotarCorazon(corazon) {
+            corazon.classList.add('explotando');
+            corazon.removeEventListener('click', explotarCorazon);
+            corazon.removeEventListener('touchstart', explotarCorazon);
+            setTimeout(() => corazon.remove(), 500);
+        }
+
+
+        // Crear corazones cada 300ms
+        setInterval(crearCorazon, 300);
+
+        // Crear burbujas constantemente
+        setInterval(crearBurbuja, 300);
+
+
     </script>
 
 
@@ -459,6 +504,84 @@
 </html>
 
 <style>
+    .corazon {
+        position: absolute;
+        bottom: -60px;
+        width: 45px;
+        height: 40px;
+        background-image: url("data:image/svg+xml;utf8,<svg viewBox='0 0 32 29.6' xmlns='http://www.w3.org/2000/svg'><path fill='rgba(255,0,102,0.5)' d='M23.6,0c-3.4,0-6.3,2.2-7.6,5.3C14.7,2.2,11.8,0,8.4,0C3.8,0,0,3.8,0,8.4c0,4.3,3.4,7.8,10.3,13.9 c2.1,1.9,4.4,3.8,6.2,5.4c0.4,0.3,1,0.3,1.4,0c1.8-1.6,4.1-3.5,6.2-5.4C28.6,16.2,32,12.7,32,8.4C32,3.8,28.2,0,23.6,0z'/></svg>");
+        background-size: cover;
+        background-repeat: no-repeat;
+        animation: subir 10s linear infinite;
+        pointer-events: auto;
+        z-index: 0;
+    }
+
+    /* Explosión */
+    @keyframes explotar {
+        0% {
+            transform: scale(1);
+            opacity: 1;
+        }
+
+        50% {
+            transform: scale(1.8);
+            opacity: 0.8;
+        }
+
+        100% {
+            transform: scale(0);
+            opacity: 0;
+        }
+    }
+
+    .corazon.explotando {
+        animation: explotar 0.5s ease-out forwards !important;
+    }
+
+
+
+    .burbuja.explotando {
+        animation: explotar 0.4s ease-out forwards !important;
+        background-color: rgba(255, 0, 0, 0.6);
+        border: 2px solid rgba(255, 0, 0, 0.8);
+        z-index: 10;
+    }
+
+
+    #burbujas-container {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        z-index: 0;
+        /* Detrás de las preguntas */
+        pointer-events: none;
+    }
+
+    .burbuja {
+        position: absolute;
+        bottom: -100px;
+        width: 30px;
+        height: 30px;
+        background: rgba(255, 0, 0, 0.3);
+        border-radius: 50%;
+        animation: subir 10s linear infinite;
+        pointer-events: auto;
+        /* Permite hacer clic */
+    }
+
+    @keyframes subir {
+        to {
+            transform: translateY(-120vh) scale(1.2);
+            opacity: 0;
+        }
+    }
+
+
+
     body {
         font-family: Arial, sans-serif;
         background: #1e3e68;
