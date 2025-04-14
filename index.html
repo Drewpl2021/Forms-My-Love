@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="contenedor">
+        <div class="pregunta">
+            <h3>1. ¿Cuáles son las teorías del parto?</h3>
+            <div class="opcion" onclick="evaluar(this, true)" data-correcta="true">Prostaglandinas, privación de la
+                progesterona, oxitocina, control endocrino fetal</div>
+            <div class="opcion" onclick="evaluar(this, false)" data-correcta="false">Hormonas del estrés, lactancia
+                materna, hipoglucemia, presión arterial</div>
+            <div class="opcion" onclick="evaluar(this, false)" data-correcta="false">Contracciones musculares, reflejo
+                de Ferguson, digestión lenta, aumento de la temperatura</div>
+            <div class="opcion" onclick="evaluar(this, false)" data-correcta="false">Cambios posturales, metabolismo
+                fetal, absorción de calcio, secreción de insulina</div>
+        </div>
+        <div class="pregunta">
+            <h3>2. Mencione los pródromos del trabajo de parto</h3>
+            <div class="opcion" onclick="evaluar(this, true)" data-correcta="true">Aumento de las contracciones
+                uterinas, expulsión del tapón mucoso, descenso del fondo uterino, polaquiuria, leucorrea </div>
+            <div class="opcion" onclick="evaluar(this, false)" data-correcta="false">Aumento de apetito, cese del
+                movimiento fetal, fiebre leve, taquicardia materna</div>
+            <div class="opcion" onclick="evaluar(this, false)" data-correcta="false">Disminución de la actividad
+                uterina, sueño profundo, hipotensión, visión borrosa</div>
+            <div class="opcion" onclick="evaluar(this, false)" data-correcta="false">Náuseas constantes, estreñimiento
+                severo, sudoración fría, hipertensión sostenida</div>
+        </div>
+        <div class="pregunta">
+            <h3>3. ¿Cuáles son las coordinaciones del trabajo de parto?</h3>
+            <div class="opcion" onclick="evaluar(this, true)" data-correcta="true">
+                <strong>Fuerzas:</strong> Primaria: Contracciones uterinas / Secundaria: Empuje de expulsión<br>
+                <strong>Travesía:</strong> Pelvis ósea, cuello uterino, vagina, introito vaginal<br>
+                <strong>Pasajero:</strong> Feto, saco amniótico, cordón umbilical, placenta
+            </div>
+            <div class="opcion" onclick="evaluar(this, false)" data-correcta="false">
+                <strong>Fuerzas:</strong> Primaria: Respiración materna / Secundaria: Náuseas y vómitos<br>
+                <strong>Travesía:</strong> Intestinos, vejiga, estómago, diafragma<br>
+                <strong>Pasajero:</strong> Líquido amniótico, placenta, ovarios, trompas de Falopio
+            </div>
+            <div class="opcion" onclick="evaluar(this, false)" data-correcta="false">
+                <strong>Fuerzas:</strong> Primaria: Contracciones cardíacas / Secundaria: Movimiento fetal<br>
+                <strong>Travesía:</strong> Útero, hígado, riñones, vejiga<br>
+                <strong>Pasajero:</strong> Moco cervical, flora vaginal, líquido preseminal, esperma
+            </div>
+            <div class="opcion" onclick="evaluar(this, false)" data-correcta="false">
+                <strong>Fuerzas:</strong> Primaria: Tensión nerviosa / Secundaria: Dolor lumbar<br>
+                <strong>Travesía:</strong> Piel abdominal, colon, recto, músculos pélvicos<br>
+                <strong>Pasajero:</strong> Sangre, hormonas, endometrio, aire
+            </div>
+        </div>
+        <div class="pregunta">
+            <h3>5. Travesía: "Borramiento y dilatación cervical durante el parto"</h3>
+            <div class="opcion" onclick="evaluar(this, true)" data-correcta="true">
+                Cuello del útero borrado y dilatado a 1 cm, cuello del útero dilatado a 5 cm, cuello del útero dilatado
+                por completo a 10 cm, cuello del útero sin borramiento ni dilatación
+            </div>
+            <div class="opcion" onclick="evaluar(this, false)" data-correcta="false">
+                Cuello del útero cerrado y endurecido, contracciones débiles, dilatación de 2 mm, placenta descendida
+            </div>
+            <div class="opcion" onclick="evaluar(this, false)" data-correcta="false">
+                Borramiento parcial a 3 cm, contracción de vejiga, presión intraabdominal, apertura vulvar
+            </div>
+            <div class="opcion" onclick="evaluar(this, false)" data-correcta="false">
+                Dilatación irregular, cuello uterino rígido, expulsión precoz de placenta, sangrado abundante
+            </div>
+        </div>
+        <div class="pregunta">
+            <h3>6. ¿Cuáles son los tipos de pelvis según su forma?</h3>
+            <div class="opcion" onclick="evaluar(this, true)" data-correcta="true">
+                Ginecoide, antropoide, androide, platipeloide
+            </div>
+            <div class="opcion" onclick="evaluar(this, false)" data-correcta="false">
+                Pélvica, lumbar, sacra, coxígea
+            </div>
+            <div class="opcion" onclick="evaluar(this, false)" data-correcta="false">
+                Ancha, estrecha, triangular, redonda
+            </div>
+            <div class="opcion" onclick="evaluar(this, false)" data-correcta="false">
+                Femenina, masculina, infantil, mixta
+            </div>
+        </div>
+        <div class="pregunta" id="pregunta7">
+            <h3>7. Seleccione los elementos que se evalúan en relación al pasajero durante el trabajo de parto: (Elija 5
+                Opciones)</h3>
+
+            <div class="opcion" onclick="seleccionarMultiple(this)" data-correcta="true">Situación: Disposición del eje
+                longitudinal del feto respecto al de la madre (longitudinal y transversal)</div>
+            <div class="opcion" onclick="seleccionarMultiple(this)" data-correcta="true">Actitud: Posición de las partes
+                del cuerpo fetal (flexión normal, extensión de la barbilla)</div>
+            <div class="opcion" onclick="seleccionarMultiple(this)" data-correcta="true">Presentación: Parte del feto
+                que aparece en primer lugar en la entrada de la pelvis (cefálica, nalgas, hombro)</div>
+            <div class="opcion" onclick="seleccionarMultiple(this)" data-correcta="true">Posición: Relación entre un
+                punto de referencia fetal (vértice, cara, ceja, pies, hombro)</div>
+            <div class="opcion" onclick="seleccionarMultiple(this)" data-correcta="true">Estación: Relación de la parte
+                presentada con las espinas ciáticas del plano medio pélvico (-3 a +4)</div>
+            <div class="opcion" onclick="seleccionarMultiple(this)" data-correcta="false">Frecuencia cardíaca fetal
+                durante el trabajo de parto</div>
+            <div class="opcion" onclick="seleccionarMultiple(this)" data-correcta="false">Posición de la placenta dentro
+                del útero</div>
+            <div class="opcion" onclick="seleccionarMultiple(this)" data-correcta="false">Dilatación cervical progresiva
+                del cuello uterino</div>
+            <div class="opcion" onclick="seleccionarMultiple(this)" data-correcta="false">Nivel de líquido amniótico en
+                el saco gestacional</div>
+            <div class="opcion" onclick="seleccionarMultiple(this)" data-correcta="false">Longitud del cordón umbilical
+            </div>
+        </div>
+        <div class="pregunta">
+            <h3>8. ¿Cuáles son las presentaciones fetales posibles durante el parto?</h3>
+
+            <div class="opcion" onclick="evaluar(this, true)" data-correcta="true">
+                Cefálica (parto normal con la cabeza primero y la cara mirando hacia atrás), de nalgas, de cara, de
+                hombro, de frente
+            </div>
+
+            <div class="opcion" onclick="evaluar(this, false)" data-correcta="false">
+                De costado, de ombligo, con el cordón primero, invertido total
+            </div>
+
+            <div class="opcion" onclick="evaluar(this, false)" data-correcta="false">
+                Sentado, de brazos, con el abdomen como punto de salida
+            </div>
+
+            <div class="opcion" onclick="evaluar(this, false)" data-correcta="false">
+                Cefálica invertida, pélvica anterior, parto transverso por el flanco
+            </div>
+
+            <div class="opcion" onclick="evaluar(this, false)" data-correcta="false">
+                De rodillas, con el tórax, de espalda completa
+            </div>
+        </div>
+        <div class="pregunta">
+            <h3>9. ¿Cuáles son las siglas que se utilizan para describir la posición fetal durante el parto?</h3>
+
+            <div class="opcion" onclick="evaluar(this, true)" data-correcta="true">
+                Lado derecho (D) o izquierdo (I) de la pelvis materna<br>
+                Punto de referencia de la parte de la presentación fetal: cabeza/occipucio (O), nalga/sacro (S),
+                cara/mentón (M), hombro/acromion (A)<br>
+                Dirección: anterior (A), posterior (P), transversa (T)
+            </div>
+
+            <div class="opcion" onclick="evaluar(this, false)" data-correcta="false">
+                Lado superior (S) o inferior (I) del útero materno<br>
+                Punto de apoyo: cuello fetal (C), pies (P), columna (L), brazo (B)<br>
+                Dirección: interna (I), externa (E), diagonal (D)
+            </div>
+
+            <div class="opcion" onclick="evaluar(this, false)" data-correcta="false">
+                Lado derecho (D) o lateral (L) de la madre<br>
+                Punto de orientación: frente (F), abdomen (A), columna (C)<br>
+                Dirección: ventral (V), dorsal (D), lateral (L)
+            </div>
+
+            <div class="opcion" onclick="evaluar(this, false)" data-correcta="false">
+                Posición fetal alta (H) o baja (B)<br>
+                Referencia: cabeza (K), pierna (P), hombro (H), pelvis (P)<br>
+                Dirección: norte (N), sur (S), este (E), oeste (O)
+            </div>
+        </div>
+
+        <div class="pregunta">
+            <h3>10. ¿Qué afirmaciones son correctas respecto al líquido amniótico durante el trabajo de parto?</h3>
+
+            <div class="opcion" onclick="evaluar(this, true)" data-correcta="true">
+                Puede romperse espontáneamente o de forma artificial<br>
+                Ante la duda, se puede utilizar papel de nitrazina o prueba microscópica (ferning)<br>
+                Deben controlarse los latidos cardíacos fetales (LCF) tras la ruptura
+            </div>
+
+            <div class="opcion" onclick="evaluar(this, false)" data-correcta="false">
+                Solo puede romperse con intervención médica<br>
+                Se confirma con rayos X y ultrasonido<br>
+                No es necesario monitorear los latidos fetales tras la ruptura
+            </div>
+
+            <div class="opcion" onclick="evaluar(this, false)" data-correcta="false">
+                El líquido amniótico siempre tiene color transparente<br>
+                Su ruptura indica el fin del trabajo de parto<br>
+                Solo se evalúa si hay sangrado
+            </div>
+
+            <div class="opcion" onclick="evaluar(this, false)" data-correcta="false">
+                Debe romperse en casa antes de ir al hospital<br>
+                Se descarta con prueba de orina<br>
+                LCF solo se controla antes del parto, no después de la ruptura
+            </div>
+        </div>
+
+        <div class="pregunta" id="pregunta11">
+            <h3>11. Seleccione las características normales y anormales del líquido amniótico: (Seleccione 6 Opciones)
+            </h3>
+
+            <div class="opcion" onclick="seleccionarMultiple(this)" data-correcta="true">Color normal:
+                transparente con manchas rosadas y restos de vérnix caseoso</div>
+            <div class="opcion" onclick="seleccionarMultiple(this)" data-correcta="true">Color anormal:
+                verdoso, pardusco, amarillo o con sangre</div>
+            <div class="opcion" onclick="seleccionarMultiple(this)" data-correcta="true">Olor normal:
+                similar a lejía</div>
+            <div class="opcion" onclick="seleccionarMultiple(this)" data-correcta="true">Olor anormal:
+                olor fétido o putrefacto</div>
+            <div class="opcion" onclick="seleccionarMultiple(this)" data-correcta="true">Cantidad normal
+                entre las 36 a 38 semanas: 800 a 1000 ml</div>
+            <div class="opcion" onclick="seleccionarMultiple(this)" data-correcta="true"> Alteraciones en
+                la cantidad: polihidramnios (exceso) u oligohidramnios (deficiencia)</div>
+
+            <div class="opcion" onclick="seleccionarMultiple(this)" data-correcta="false">Color normal:
+                marrón con coágulos</div>
+            <div class="opcion" onclick="seleccionarMultiple(this)" data-correcta="false">Olor normal:
+                dulce o afrutado</div>
+            <div class="opcion" onclick="seleccionarMultiple(this)" data-correcta="false">Cantidad normal:
+                menos de 300 ml en cualquier etapa</div>
+            <div class="opcion" onclick="seleccionarMultiple(this)" data-correcta="false">Polihidramnios y
+                oligohidramnios son variaciones sin importancia clínica</div>
+        </div>
+        <div class="pregunta" id="pregunta12">
+            <h3>12. Seleccione los factores que influyen en el movimiento y la postura del feto al adaptarse al canal
+                del parto: (Seleccione 4 Opciones)</h3>
+
+            <div class="opcion" onclick="seleccionarMultiple(this)" data-correcta="true">Diámetro de la
+                pelvis</div>
+            <div class="opcion" onclick="seleccionarMultiple(this)" data-correcta="true">Tejidos blandos
+                maternos</div>
+            <div class="opcion" onclick="seleccionarMultiple(this)" data-correcta="true">Tamaño del feto
+            </div>
+            <div class="opcion" onclick="seleccionarMultiple(this)" data-correcta="true">Fuerza de las
+                contracciones uterinas</div>
+
+            <div class="opcion" onclick="seleccionarMultiple(this)" data-correcta="false">Estado
+                nutricional del recién nacido</div>
+            <div class="opcion" onclick="seleccionarMultiple(this)" data-correcta="false">Presión arterial
+                del bebé</div>
+            <div class="opcion" onclick="seleccionarMultiple(this)" data-correcta="false">Posición de la
+                placenta en el tercer trimestre</div>
+            <div class="opcion" onclick="seleccionarMultiple(this)" data-correcta="false">Frecuencia de
+                micción materna</div>
+        </div>
+
+        <div class="pregunta" id="pregunta13">
+            <h3>13. Seleccione los movimientos del mecanismo del parto realizados por el feto para atravesar el canal
+                del parto: (Seleccione 6 Opciones)</h3>
+
+            <div class="opcion" onclick="seleccionarMultiple(this)" data-correcta="true">Encajamiento y descenso</div>
+            <div class="opcion" onclick="seleccionarMultiple(this)" data-correcta="true">Flexión</div>
+            <div class="opcion" onclick="seleccionarMultiple(this)" data-correcta="true">Rotación interna</div>
+            <div class="opcion" onclick="seleccionarMultiple(this)" data-correcta="true">Extensión</div>
+            <div class="opcion" onclick="seleccionarMultiple(this)" data-correcta="true">Rotación externa</div>
+            <div class="opcion" onclick="seleccionarMultiple(this)" data-correcta="true">Expulsión</div>
+
+            <div class="opcion" onclick="seleccionarMultiple(this)" data-correcta="false">Compresión torácica</div>
+            <div class="opcion" onclick="seleccionarMultiple(this)" data-correcta="false">Inversión uterina</div>
+            <div class="opcion" onclick="seleccionarMultiple(this)" data-correcta="false">Relajación muscular fetal
+            </div>
+            <div class="opcion" onclick="seleccionarMultiple(this)" data-correcta="false">Contracción pélvica activa del
+                feto</div>
+        </div>
+        <div class="pregunta" id="pregunta15">
+            <h3>15. ¿Cuál de los siguientes corresponde a los acontecimientos premonitorios del parto?</h3>
+            <div class="opcion" onclick="evaluar(this, true)" data-correcta="true">
+                ✓ Entre las 38 y 40 semanas, el feto está listo para la vida extrauterina.<br>
+                ✓ Se presenta aligeramiento (descenso del fondo uterino), aumento de micción y presión púbica.<br>
+                ✓ Ocurre la pérdida del tapón mucoso con secreción espesa y teñida de sangre.<br>
+                ✓ Hay aumento repentino de energía (momento de anidar).<br>
+                ✓ El cuello uterino inicia su maduración.<br>
+                ✓ Se perciben contracciones de Braxton Hicks.
+            </div>
+            <div class="opcion" onclick="evaluar(this, false)" data-correcta="false">
+                ✓ Entre las 38 y 40 semanas, la placenta comienza a desprenderse como preparación al parto.<br>
+                ✓ Aparece fatiga extrema, disminución de movimientos fetales y ruptura inmediata de membranas.<br>
+                ✓ Las contracciones regulares provocan la dilatación completa sin fase previa.<br>
+                ✓ Se presenta descenso de la presión arterial materna con pérdida de líquido por la uretra.
+            </div>
+            <div class="opcion" onclick="evaluar(this, false)" data-correcta="false">
+                ✓ Se da la rotación del feto hacia la pelvis, con activación respiratoria intrauterina.<br>
+                ✓ Las contracciones de parto aumentan la secreción de leche antes del nacimiento.<br>
+                ✓ La placenta madura, lo que causa coloración púrpura del líquido amniótico.<br>
+                ✓ El bebé entra en estado de sueño profundo previo a su nacimiento.
+            </div>
+            <div class="opcion" onclick="evaluar(this, false)" data-correcta="false">
+                ✓ El feto desciende por completo en el canal de parto y se inicia la expulsión.<br>
+                ✓ Hay pérdida abundante de líquido amniótico con presencia de meconio.<br>
+                ✓ Se da la dilatación completa del cuello uterino a 10 cm.<br>
+                ✓ Se aplican maniobras activas para facilitar la salida del bebé.
+            </div>
+        </div>
+        <div class="pregunta" id="pregunta16">
+            <h3>16. ¿Cuál de las siguientes describe correctamente las diferencias entre el trabajo de parto verdadero y
+                el falso?</h3>
+            <div class="opcion" onclick="evaluar(this, true)" data-correcta="true">
+                ✓ Tapón mucoso: se presenta en el verdadero, está ausente en el falso<br>
+                ✓ Contracciones: regulares, con aumento de intensidad y frecuencia en el verdadero; irregulares, sin
+                cambios en el falso<br>
+                ✓ Molestia: dolor lumbar irradiado al abdomen en el verdadero; localizado solo en el abdomen en el
+                falso<br>
+                ✓ Actividad física: caminar intensifica las contracciones en el verdadero; las disminuye en el falso<br>
+                ✓ Cambios cervicales: el cérvix se borra y dilata en el verdadero; no hay cambios en el falso
+            </div>
+            <div class="opcion" onclick="evaluar(this, false)" data-correcta="false">
+                ✓ Tapón mucoso: aparece en ambos casos<br>
+                ✓ Contracciones: siempre intensas desde el inicio<br>
+                ✓ Molestia: solo se siente en la espalda<br>
+                ✓ Actividad física: no influye en las contracciones<br>
+                ✓ Cambios cervicales: siempre se dilata igual en ambos
+            </div>
+            <div class="opcion" onclick="evaluar(this, false)" data-correcta="false">
+                ✓ Tapón mucoso: aparece solo en partos falsos<br>
+                ✓ Contracciones: regulares en ambos<br>
+                ✓ Molestia: en el pecho<br>
+                ✓ Actividad física: suprime el parto<br>
+                ✓ Cambios cervicales: se inflama pero no dilata
+            </div>
+            <div class="opcion" onclick="evaluar(this, false)" data-correcta="false">
+                ✓ Tapón mucoso: sale al final del parto<br>
+                ✓ Contracciones: más leves en el verdadero<br>
+                ✓ Molestia: solo mental, no física<br>
+                ✓ Actividad física: genera presión arterial<br>
+                ✓ Cambios cervicales: ocurre en la placenta, no en el cérvix
+            </div>
+        </div>
+        <div class="pregunta" id="pregunta17">
+            <h3>17. ¿Cuál de las siguientes afirmaciones describe correctamente la rotura de membranas?</h3>
+            <div class="opcion" onclick="evaluar(this, true)" data-correcta="true">
+                ✓ Puede presentarse como goteo o escurrimiento de líquido amniótico<br>
+                ✓ Puede ser una rotura espontánea (rotura de la fuente)<br>
+                ✓ Si el trabajo de parto no inicia en 12-24 horas tras la rotura, hay riesgo de infección o prolapso del
+                cordón umbilical
+            </div>
+            <div class="opcion" onclick="evaluar(this, false)" data-correcta="false">
+                ✓ La rotura de membranas se acompaña siempre de sangrado vaginal abundante<br>
+                ✓ Es necesaria una intervención quirúrgica inmediata para evitar complicaciones<br>
+                ✓ No existe ningún riesgo si el trabajo de parto no comienza en varios días
+            </div>
+            <div class="opcion" onclick="evaluar(this, false)" data-correcta="false">
+                ✓ La rotura de membranas impide el inicio del trabajo de parto<br>
+                ✓ Solo ocurre durante el parto activo<br>
+                ✓ No se asocia con riesgo de infección
+            </div>
+            <div class="opcion" onclick="evaluar(this, false)" data-correcta="false">
+                ✓ El líquido amniótico se vuelve espeso y verde al romperse las membranas<br>
+                ✓ El parto debe iniciarse antes de 6 horas para evitar sufrimiento fetal<br>
+                ✓ La rotura artificial de membranas es obligatoria en todos los partos vaginales
+            </div>
+        </div>
+        <div class="pregunta" id="pregunta18">
+            <h3>18. ¿Cuál es el orden correcto de las etapas del trabajo de parto?</h3>
+            <div class="opcion" onclick="evaluar(this, true)" data-correcta="true">
+                I ETAPA: Dilatación<br>
+                II ETAPA: Expulsión<br>
+                III ETAPA: Expulsión de la placenta (alumbramiento)<br>
+                IV ETAPA: Recuperación
+            </div>
+            <div class="opcion" onclick="evaluar(this, false)" data-correcta="false">
+                I ETAPA: Expulsión<br>
+                II ETAPA: Dilatación<br>
+                III ETAPA: Recuperación<br>
+                IV ETAPA: Alumbramiento
+            </div>
+            <div class="opcion" onclick="evaluar(this, false)" data-correcta="false">
+                I ETAPA: Contracciones<br>
+                II ETAPA: Dilatación<br>
+                III ETAPA: Rotura de membranas<br>
+                IV ETAPA: Expulsión
+            </div>
+            <div class="opcion" onclick="evaluar(this, false)" data-correcta="false">
+                I ETAPA: Latencia<br>
+                II ETAPA: Dilatación completa<br>
+                III ETAPA: Activación fetal<br>
+                IV ETAPA: Expulsión
+            </div>
+        </div>
+
+    </div>
+
+
+
+    <script>
+        function evaluar(elemento, esCorrecta) {
+            const opciones = elemento.parentNode.querySelectorAll('.opcion');
+            opciones.forEach(op => {
+                op.onclick = null;
+                op.classList.remove('correcta', 'incorrecta');
+            });
+
+            if (esCorrecta) {
+                elemento.classList.add('correcta');
+            } else {
+                elemento.classList.add('incorrecta');
+                opciones.forEach(op => {
+                    if (op.dataset.correcta === "true") {
+                        op.classList.add('correcta');
+                    }
+                });
+            }
+        }
+
+        function mezclarOpciones() {
+            const preguntas = document.querySelectorAll('.pregunta');
+            preguntas.forEach(pregunta => {
+                const opciones = Array.from(pregunta.querySelectorAll('.opcion'));
+                const contenedor = opciones[0].parentNode;
+
+                // Mezclar opciones
+                for (let i = opciones.length - 1; i > 0; i--) {
+                    const j = Math.floor(Math.random() * (i + 1));
+                    [opciones[i], opciones[j]] = [opciones[j], opciones[i]];
+                }
+
+                // Quitar opciones antiguas y agregar mezcladas
+                opciones.forEach(op => contenedor.appendChild(op));
+            });
+        }
+
+        window.onload = mezclarOpciones;
+
+
+        function seleccionarMultiple(elemento) {
+            if (elemento.classList.contains('bloqueada')) return;
+
+            const pregunta = elemento.parentNode;
+
+            // Marcar o desmarcar selección
+            elemento.classList.toggle('seleccionada');
+
+            const seleccionadas = pregunta.querySelectorAll('.opcion.seleccionada');
+            const correctas = pregunta.querySelectorAll('.opcion[data-correcta="true"]');
+
+            // Solo evalúa cuando se han seleccionado exactamente el número de correctas
+            if (seleccionadas.length === correctas.length) {
+                const opciones = pregunta.querySelectorAll('.opcion');
+                opciones.forEach(op => {
+                    op.classList.add('bloqueada');
+                    op.onclick = null;
+                });
+
+                seleccionadas.forEach(op => {
+                    if (op.dataset.correcta === "true") {
+                        op.classList.add('correcta');
+                    } else {
+                        op.classList.add('incorrecta');
+                    }
+                });
+            }
+        }
+    </script>
+
+
+
+
+</body>
+
+</html>
+
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background: #1e3e68;
+        margin: 0;
+        padding: 0;
+    }
+
+    .contenedor {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 30px 20px;
+    }
+
+    .pregunta {
+        background: #fff;
+        padding: 20px;
+        margin-bottom: 30px;
+        border-radius: 12px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+        transition: all 0.3s ease-in-out;
+    }
+
+    .pregunta h3 {
+        margin-bottom: 15px;
+    }
+
+    .opcion {
+        display: block;
+        margin: 10px 0;
+        padding: 12px;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: background 0.3s, border 0.3s;
+        border: 1px solid #ccc;
+        background-color: #fff;
+    }
+
+    .opcion:hover {
+        background-color: #f2f2f2;
+    }
+
+    .opcion.seleccionada {
+        background-color: #d9f0ff;
+        border-color: #3498db;
+        color: #1a5276;
+    }
+
+    .opcion.correcta {
+        background-color: #c8f7c5;
+        border-color: #27ae60;
+        color: #2e7d32;
+    }
+
+    .opcion.incorrecta {
+        background-color: #f8d7da;
+        border-color: #c0392b;
+        color: #a94442;
+    }
+
+    .bloqueada {
+        pointer-events: none;
+        opacity: 0.9;
+    }
+
+    @media screen and (max-width: 768px) {
+        .contenedor {
+            padding: 20px 10px;
+        }
+
+        .opcion {
+            font-size: 15px;
+        }
+    }
+
+    @media screen and (max-width: 480px) {
+        .opcion {
+            font-size: 14px;
+            padding: 10px;
+        }
+
+        .pregunta h3 {
+            font-size: 17px;
+        }
+    }
+
+
+    .pregunta {
+        background: #fff;
+        padding: 20px;
+        margin-bottom: 20px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .opcion {
+        display: block;
+        margin: 10px 0;
+        padding: 10px;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background 0.3s;
+        border: 1px solid #ccc;
+    }
+
+    .opcion.correcta {
+        background-color: #c8f7c5;
+        border-color: #27ae60;
+        color: #2e7d32;
+    }
+
+    .opcion.incorrecta {
+        background-color: #f8d7da;
+        border-color: #c0392b;
+        color: #a94442;
+    }
+
+    .opcion {
+        display: block;
+        margin: 10px 0;
+        padding: 10px;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background 0.3s, border 0.3s;
+        border: 1px solid #ccc;
+        background-color: #fff;
+    }
+
+    .opcion:hover {
+        background-color: #f2f2f2;
+    }
+
+    .opcion.seleccionada {
+        background-color: #d9f0ff;
+        /* Celeste claro */
+        border-color: #3498db;
+        color: #1a5276;
+    }
+
+    .opcion.correcta {
+        background-color: #c8f7c5;
+        /* Verde */
+        border-color: #27ae60;
+        color: #2e7d32;
+    }
+
+    .opcion.incorrecta {
+        background-color: #f8d7da;
+        /* Rojo claro */
+        border-color: #c0392b;
+        color: #a94442;
+    }
+
+    .bloqueada {
+        pointer-events: none;
+        opacity: 0.9;
+    }
+</style>
